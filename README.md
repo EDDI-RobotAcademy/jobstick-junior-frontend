@@ -14,6 +14,7 @@
 | `ai-interview`           | `3002`   | AI 기반 면접 시뮬레이션 기능 |
 | `membership`             | `3003`   |  |
 | `mypage`                 | `3004`   | 유저 마이페이지 기능 |
+| `review`                 | `3005`   | ai-interview , 기업관련 리뷰 모듈 |
 | `google-authentication` | `3100`   | Google OAuth2 인증 처리 모듈 |
 | `kakao-authentication`  | `3101`   | Kakao OAuth2 인증 처리 모듈 |
 | `naver-authentication`  | `3102`   | Naver OAuth2 인증 처리 모듈 |
