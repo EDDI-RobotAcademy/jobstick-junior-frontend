@@ -2,6 +2,7 @@ export const mfConfig = {
   name: "main_container",
   remotes: {
     jobPostingsApp: "jobPostingsApp@http://localhost:3001/remoteEntry.js",
+    review: "reviewapp@http://localhost:3005/remoteEntry.js"
   },
   shared: {
     react: { singleton: true, requiredVersion: "^18.2.0" },

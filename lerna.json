@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "packages": [
     "main-container",
-    "job-postings"
+    "job-postings",
+    "review"
   ],
   "hoist": true
 }
