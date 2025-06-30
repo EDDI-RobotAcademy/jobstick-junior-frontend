@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import { CircularProgress } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import MainPage from "./components/MainPage/MainPage.tsx";
 const JobPostingsApp = lazy(() => import("jobPostingsApp/App"));
 
 const App = () => {
@@ -12,8 +12,9 @@ const App = () => {
         <BrowserRouter>
             <Suspense fallback={<CircularProgress />}>
                 <Routes>
-                    <Route path="/" element={<div>Home Page</div>} />
+                    <Route path="/" element={<MainPage/>} />
                     <Route path="/job-postings" element={<JobPostingsApp />} />
+                    {/*<Route path={"/"}*/}
                 </Routes>
             </Suspense>
         </BrowserRouter>
