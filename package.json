@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "main-container",
-    "job-postings"
+    "job-postings",
+    "review"
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
@@ -12,6 +13,7 @@
   "devDependencies": {
     "@types/styled-components": "^5.1.34",
     "cross-env": "^7.0.3",
+    "external-remotes-plugin": "^1.0.0",
     "lerna": "^8.2.1"
   },
   "dependencies": {
