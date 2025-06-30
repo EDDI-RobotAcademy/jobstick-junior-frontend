@@ -26,9 +26,10 @@
 ```bash
 
 npm install
-npm run dev  # localhost:3000
+npm run start
 
 # job-postings 실행
 cd ../job-postings
 npm install
-npm run dev  # localhost:3001
+npm run start
+```
