@@ -1,5 +1,4 @@
 export const mfConfig = {
-<<<<<<< Updated upstream
   name: "myPageApp",
   filename: "remoteEntry.js",
   library: { type: "var", name: "myPageApp" },
@@ -14,9 +13,3 @@ export const mfConfig = {
     "react-router-dom": { singleton: true, requiredVersion: "^6.30.0" },
   },
 };
-=======
-  name: "mypage",
-  exposes: {},
-  shared: ["react", "react-dom"],
-};
->>>>>>> Stashed changes

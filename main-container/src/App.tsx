@@ -19,10 +19,6 @@ const App = () => {
                     <Route path="/" element={<MainPage/>} />
                     <Route path="/job-postings" element={<JobPostingsApp />} />
                     <Route path="/mypage" element={<MyPageApp />} />
-<<<<<<< Updated upstream
-                    {/*<Route path={"/"}*/}
-=======
->>>>>>> Stashed changes
                 </Routes>
             </Suspense>
             <Footer />
