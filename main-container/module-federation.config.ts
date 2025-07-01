@@ -2,12 +2,8 @@ export const mfConfig = {
   name: "main_container",
   remotes: {
     jobPostingsApp: "jobPostingsApp@http://localhost:3001/remoteEntry.js",
-<<<<<<< Updated upstream
     myPageApp: "myPageApp@http://localhost:3004/remoteEntry.js",
     review: "reviewapp@http://localhost:3005/remoteEntry.js"
-=======
-    myPageApp: "myPageApp@http://localhost:3004/remoteEntry.js"
->>>>>>> Stashed changes
   },
   shared: {
     react: { singleton: true, requiredVersion: "^18.2.0" },

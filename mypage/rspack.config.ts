@@ -15,11 +15,7 @@ const targets = ["chrome >= 87", "edge >= 88", "firefox >= 78", "safari >= 14"];
 export default defineConfig({
   context: __dirname,
   entry: {
-<<<<<<< Updated upstream
     main: "./src/index.tsx",
-=======
-    main: "./src/index.ts",
->>>>>>> Stashed changes
   },
   resolve: {
     extensions: ["...", ".ts", ".tsx", ".jsx"],

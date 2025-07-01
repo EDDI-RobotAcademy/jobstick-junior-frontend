@@ -4,12 +4,8 @@
   "workspaces": [
     "main-container",
     "job-postings",
-<<<<<<< Updated upstream
     "mypage",
     "review"
-=======
-    "mypage"
->>>>>>> Stashed changes
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
@@ -25,6 +21,7 @@
     "tailwindcss": "^4.1.11"
   },
   "dependencies": {
+    "react-icons": "^5.5.0",
     "styled-components": "^6.1.19"
   }
 }

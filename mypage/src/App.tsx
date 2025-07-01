@@ -9,8 +9,5 @@ const App = () => (
     <div>Framework: react-18</div>
   </div>
 );
-<<<<<<< Updated upstream
 
 export default App;
-=======
->>>>>>> Stashed changes
