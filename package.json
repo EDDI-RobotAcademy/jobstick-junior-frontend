@@ -4,7 +4,12 @@
   "workspaces": [
     "main-container",
     "job-postings",
+<<<<<<< Updated upstream
+    "mypage",
     "review"
+=======
+    "mypage"
+>>>>>>> Stashed changes
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
