@@ -4,7 +4,12 @@
   "packages": [
     "main-container",
     "job-postings",
+<<<<<<< Updated upstream
+    "mypage",
     "review"
+=======
+    "mypage"
+>>>>>>> Stashed changes
   ],
   "hoist": true
 }

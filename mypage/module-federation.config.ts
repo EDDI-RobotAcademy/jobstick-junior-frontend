@@ -1,13 +1,10 @@
 export const mfConfig = {
-  name: "main_container",
-  remotes: {
-    jobPostingsApp: "jobPostingsApp@http://localhost:3001/remoteEntry.js",
 <<<<<<< Updated upstream
-    myPageApp: "myPageApp@http://localhost:3004/remoteEntry.js",
-    review: "reviewapp@http://localhost:3005/remoteEntry.js"
-=======
-    myPageApp: "myPageApp@http://localhost:3004/remoteEntry.js"
->>>>>>> Stashed changes
+  name: "myPageApp",
+  filename: "remoteEntry.js",
+  library: { type: "var", name: "myPageApp" },
+  exposes: {
+    "./App": "./src/App",
   },
   shared: {
     react: { singleton: true, requiredVersion: "^18.2.0" },
@@ -17,3 +14,9 @@ export const mfConfig = {
     "react-router-dom": { singleton: true, requiredVersion: "^6.30.0" },
   },
 };
+=======
+  name: "mypage",
+  exposes: {},
+  shared: ["react", "react-dom"],
+};
+>>>>>>> Stashed changes
