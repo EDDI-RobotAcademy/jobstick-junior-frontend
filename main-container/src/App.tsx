@@ -8,6 +8,7 @@ import {NavBar} from "./components/NavigationBar";
 import {Footer} from "./components/Footer";
 const JobPostingsApp = lazy(() => import("jobPostingsApp/App"));
 const MyPageApp = lazy(() => import("myPageApp/App"));
+const MemberShipApp = lazy(() => import("membershipApp/App"));
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
                     <Route path="/" element={<MainPage/>} />
                     <Route path="/job-postings" element={<JobPostingsApp />} />
                     <Route path="/mypage" element={<MyPageApp />} />
+                    <Route path="/membership" element={<MemberShipApp/>}/>
                 </Routes>
             </Suspense>
             <Footer />
