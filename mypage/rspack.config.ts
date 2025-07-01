@@ -15,22 +15,26 @@ const targets = ["chrome >= 87", "edge >= 88", "firefox >= 78", "safari >= 14"];
 export default defineConfig({
   context: __dirname,
   entry: {
+<<<<<<< Updated upstream
     main: "./src/index.tsx",
+=======
+    main: "./src/index.ts",
+>>>>>>> Stashed changes
   },
   resolve: {
     extensions: ["...", ".ts", ".tsx", ".jsx"],
   },
 
   devServer: {
-    port: 80,
+    port: 3004,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, "src")],
   },
   output: {
     // You need to set a unique value that is not equal to other applications
-    uniqueName: "main_container",
+    uniqueName: "mypage",
     // publicPath must be configured if using manifest
-    publicPath: "http://localhost:80/",
+    publicPath: "http://localhost:3004/",
   },
 
   experiments: {
@@ -40,8 +44,8 @@ export default defineConfig({
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        type: "asset/resource",
+        test: /\.svg$/,
+        type: "asset",
       },
       {
         test: /\.css$/,

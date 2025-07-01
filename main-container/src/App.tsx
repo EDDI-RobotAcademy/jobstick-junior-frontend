@@ -7,6 +7,7 @@ import MainPage from "./components/MainPage/MainPage.tsx";
 import {NavBar} from "./components/NavigationBar";
 import {Footer} from "./components/Footer";
 const JobPostingsApp = lazy(() => import("jobPostingsApp/App"));
+const MyPageApp = lazy(() => import("myPageApp/App"));
 
 const App = () => {
 
@@ -17,7 +18,11 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<MainPage/>} />
                     <Route path="/job-postings" element={<JobPostingsApp />} />
+                    <Route path="/mypage" element={<MyPageApp />} />
+<<<<<<< Updated upstream
                     {/*<Route path={"/"}*/}
+=======
+>>>>>>> Stashed changes
                 </Routes>
             </Suspense>
             <Footer />
