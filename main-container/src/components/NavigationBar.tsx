@@ -133,7 +133,7 @@ export const NavBar: React.FC = () => {
     ];
 
     const userLinks = [
-        { label: 'REVIEW', path: '/review/list' },
+        { label: 'REVIEW', path: '/review' },
     ];
 
     const myPageItems = [
