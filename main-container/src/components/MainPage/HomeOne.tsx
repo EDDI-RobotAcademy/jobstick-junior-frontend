@@ -3,6 +3,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import ph1 from '../../assets/images/fixed/ph1.png';
+// import home_icon from '../../assets/icons/fixed/home-icon.svg';
+
 export type HomeOneProps = {
     /** 두 번째 섹션으로 스크롤할 때 호출되는 콜백 */
     onScrollToSecond: () => void;
@@ -32,10 +34,22 @@ const Container = styled.section`
   width: 100%; height: 100vh;
   display: flex; justify-content: space-between; align-items: center;
   padding: 0 5%; background: #fff; position: relative; overflow: hidden;
++ /* 모바일: 세로 스택으로 전환 */
++ @media screen and (max-width: 768px) {
++   flex-direction: column;
++   justify-content: center;
++   padding: 20px 5%;
++   height: auto;          /* 내용에 맞춰 길이 조정 */
++ }
 `;
 
 const TextWrapper = styled.div`
   width: 50%; display: flex; flex-direction: column; justify-content: center;
++ /* 모바일: 전체 너비 사용 */
++ @media screen and (max-width: 768px) {
++   width: 100%;
++   text-align: center;
++ }
 `;
 
 const FadeDiv = styled.div<{ delay: number }>`
@@ -46,7 +60,6 @@ const FadeDiv = styled.div<{ delay: number }>`
 
 const Icon = styled.div`
   width: 80px; height: 80px;
-  background: url('/assets/icons/home-icon.svg') no-repeat center;
   background-size: contain; margin-bottom: 24px;
 `;
 
@@ -74,10 +87,21 @@ const Description = styled.p`
 
 const ImageWrapper = styled.div`
   width: 45%; display: flex; justify-content: center;
++ /* 모바일: 전체 너비 + 위쪽 여백 */
++ @media screen and (max-width: 768px) {
++   width: 100%;
++   margin-top: 40px;
++ }
 `;
 
 const PhoneImage = styled.img`
   width: 90%; max-width: 400px; transform: rotate(-5deg);
++ /* 모바일: 화면 너비 80% 까지 늘리고 max-width 축소 */
++ @media screen and (max-width: 768px) {
++   width: 80%;
++   max-width: 300px;
++   transform: rotate(0deg); /* 기울임 제거해도 좋음 */
++ }
 `;
 
 const ReadMore = styled.div`

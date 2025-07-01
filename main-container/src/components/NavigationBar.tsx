@@ -4,13 +4,20 @@ import { useNavigate } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import logo from '../assets/images/fixed/logo2.png';
 // Styled Components
+const APP_BAR_HEIGHT = '72px';
 const AppBar = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  padding: 0 16px;
-  background: linear-gradient(94deg, #2a49e5 1.69%, #6751e0 116.61%);
+    position: fixed;         /* 화면 최상단에 고정 */
+    top: 0;
+    left: 0;
+    width: 100vw;            /* 뷰포트 너비 전체 */
+    height: ${APP_BAR_HEIGHT};
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background: linear-gradient(94deg, #2a49e5 1.69%, #6751e0 116.61%);
+    z-index: 1000;           /* 다른 요소 위로 */
+    box-sizing: border-box;  /* padding 포함한 계산 */
 `;
 const HomeImageWrapper = styled.div`
   position: relative; width: 150px; height: 50px;
