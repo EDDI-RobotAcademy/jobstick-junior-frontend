@@ -4,12 +4,15 @@ import ReactDOM from "react-dom/client";
 import { CircularProgress } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./components/MainPage/MainPage.tsx";
+import {NavBar} from "./components/NavigationBar";
+import {Footer} from "./components/Footer";
 const JobPostingsApp = lazy(() => import("jobPostingsApp/App"));
 
 const App = () => {
 
     return (
         <BrowserRouter>
+            <NavBar />
             <Suspense fallback={<CircularProgress />}>
                 <Routes>
                     <Route path="/" element={<MainPage/>} />
@@ -17,6 +20,7 @@ const App = () => {
                     {/*<Route path={"/"}*/}
                 </Routes>
             </Suspense>
+            <Footer />
         </BrowserRouter>
     );
 };
