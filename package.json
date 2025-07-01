@@ -5,7 +5,8 @@
     "main-container",
     "job-postings",
     "mypage",
-    "review"
+    "review",
+    "membership"
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
