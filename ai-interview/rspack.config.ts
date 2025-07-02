@@ -42,7 +42,6 @@ export default defineConfig({
       {
         test: /\.css$/i,
         use: [
-          "style-loader",          // CSS를 <style> 태그로 삽입
           {
             loader: "css-loader",
             options: {
