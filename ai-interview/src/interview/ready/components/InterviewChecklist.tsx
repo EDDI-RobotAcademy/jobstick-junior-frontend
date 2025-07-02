@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import "../styles/InterviewChecklist.css"
+import * as S from "../styles/InterviewChecklist.styles.ts";
 import InterviewNotice from "./InterviewNotice.tsx";
 
 const tabs = ["회사", "직무", "전공 여부", "경력" ,"프로젝트 경험", "Tech Skills"];
@@ -88,7 +88,7 @@ const InterviewChecklist = () => {
 
             // 서버 전송 성공 시 인터뷰 정보도 로컬에 저장(필요하다면)
             localStorage.setItem("interviewInfo", JSON.stringify(interviewData));
-            navigate("/ai-interview/prepare");
+            navigate("/ai-interview/ai-test");
         } catch (error){
             console.error(error);
             alert("인터뷰 정보 전송 중 오류가 발생했습니다.");
@@ -138,103 +138,105 @@ const InterviewChecklist = () => {
 
     return (
         <main>
-            <div className="interviewChecklist__control-margin">
-                <div className="interviewChecklist__tab-container">
+            <S.ControlMargin>
+                <S.TabContainer>
                     {tabs.map((tab) => (
-                        <button
+                        <S.TabButton
                             key= {tab}
-                            className={`interviewChecklist__tab-button ${ activeTab === tab ? "interviewChecklist__tab-button-active" : "" }`}
+                            active={activeTab === tab}
                             onClick={()=> setActiveTab(tab)}
                         >
                             {tab}
-                        </button>
+                        </S.TabButton>
                     ))}
-                </div>
+                </S.TabContainer>
+
                 {activeTab === "회사" && (
-                    <div className="interviewChecklist__chip-container">
+                    <S.ChipContainer>
                         {companies.map((c) => (
-                        <button
-                            key={c} className={selectedCompany === c ? "interviewChecklist__selected-chip" : "interviewChecklist__unselected-chip"}
+                        <S.ChipButton
+                            key={c}
+                            selected={selectedCompany === c}
                             onClick={() => handleSelect("회사", c)}
                         >
                             {c}
-                        </button>
+                        </S.ChipButton>
                     ))}
-                    </div>
+                    </S.ChipContainer>
                 )}
                 {activeTab === "전공 여부" && (
-                    <div className="interviewChecklist__chip-container">
+                    <S.ChipContainer>
                         {academics.map((a) => (
-                            <button
+                            <S.ChipButton
                                 key={a}
-                                className={selectedAcademic === a ? "interviewChecklist__selected-chip" : "interviewChecklist__unselected-chip"}
+                                selected={selectedAcademic === a}
                                 onClick={() => handleSelect("전공 여부", a)}
                             >
                                 {a}
-                            </button>
+                            </S.ChipButton>
                         ))}
-                    </div>
+                    </S.ChipContainer>
                 )}
 
                 {activeTab === "경력" && (
-                    <div className="interviewChecklist__chip-container">
+                    <S.ChipContainer>
                         {careers.map((c) => (
-                            <button
+                            <S.ChipButton
                                 key={c}
-                                className={selectedCareer === c ? "interviewChecklist__selected-chip" : "interviewChecklist__unselected-chip"}
+                                selected={selectedCareer === c}
                                 onClick={() => handleSelect("경력", c)}
                             >
                                 {c}
-                            </button>
+                            </S.ChipButton>
                         ))}
-                    </div>
+                    </S.ChipContainer>
                 )}
 
                 {activeTab === "프로젝트 경험" && (
-                    <div className="interviewChecklist__chip-container">
+                    <S.ChipContainer>
                         {projects.map((p) => (
-                            <button
+                            <S.ChipButton
                                 key={p}
-                                className={selectedProject === p ? "interviewChecklist__selected-chip" : "interviewChecklist__unselected-chip"}
+                                selected={selectedProject === p}
                                 onClick={() => handleSelect("프로젝트 경험", p)}
                             >
                                 {p}
-                            </button>
+                            </S.ChipButton>
                         ))}
-                    </div>
+                    </S.ChipContainer>
                 )}
 
                 {activeTab === "직무" && (
-                    <div className="interviewChecklist__chip-container">
+                    <S.ChipContainer>
                         {keywords.map((k) => (
-                            <button
+                            <S.ChipButton
                                 key={k}
-                                className={selectedKeyword === k ? "interviewChecklist__selected-chip" : "interviewChecklist__unselected-chip"}
+                                selected={selectedKeyword === k}
                                 onClick={() => handleSelect("직무", k)}
                             >
                                 {k}
-                            </button>
+                            </S.ChipButton>
                         ))}
-                    </div>
+                    </S.ChipContainer>
                 )}
 
                 {activeTab === "Tech Skills" && (
-                    <div className="interviewChecklist__chip-container">
+                    <S.ChipContainer>
                         {skills.map((s) => (
-                            <button
+                            <S.ChipButton
                                 key={s}
-                                className={selectedSkills.includes(s) ? "interviewChecklist__selected-chip" : "interviewChecklist__unselected-chip"}
+                                selected={selectedSkills.includes(s)}
                                 onClick={() => handleSkillToggle(s)}
                             >
                                 {s}
-                            </button>
+                            </S.ChipButton>
                         ))}
-                    </div>
+                    </S.ChipContainer>
                 )}
                 <InterviewNotice onSubmit={startInterview} />
-            </div>
+            </S.ControlMargin>
         </main>
-    )
+    );
 
 };
 
